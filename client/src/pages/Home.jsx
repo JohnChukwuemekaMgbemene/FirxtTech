@@ -33,7 +33,7 @@ export default function Home() {
         }}
       >
         {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-white/20 pointer-events-none transition-all duration-700"></div>
+        <div className="absolute inset-0 bg-white/10 pointer-events-none transition-all duration-700"></div>
         <div className="relative z-10">
           <HelpCategories />
           <FeaturedFAQs />

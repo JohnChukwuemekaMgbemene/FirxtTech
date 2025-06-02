@@ -10,7 +10,7 @@ export default function HeroSection() {
           <span className="mr-2">🔍</span> Search Help Articles
         </button>
         <button className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 flex items-center">
-          <span className="mr-2">🎫</span> Submit a Ticket
+          <span className="mr-2">🛎️</span> Browse Services
         </button>
       </div>
       <input
