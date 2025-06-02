@@ -4,14 +4,16 @@ import { NavLink } from 'react-router-dom';
 export default function Header() {
   return (
     <header className="flex items-center justify-between px-8 py-4 bg-white shadow">
-      <div className="font-bold text-xl text-blue-600">FirxtTech</div>
-      <nav className="space-x-6">
+      {/* Company Name Left */}
+      <div className="font-bold text-2xl text-blue-600">FirxtTech</div>
+      {/* Nav Buttons Right */}
+      <nav className="flex space-x-12">
         <NavLink
           to="/"
           className={({ isActive }) =>
             isActive
               ? "text-blue-600 font-semibold"
-              : "text-gray-700 hover:text-blue-600"
+              : "text-gray-700 hover:text-orange-600"
           }
         >
           Home
@@ -21,7 +23,7 @@ export default function Header() {
           className={({ isActive }) =>
             isActive
               ? "text-blue-600 font-semibold"
-              : "text-gray-700 hover:text-blue-600"
+              : "text-gray-700 hover:text-orange-600"
           }
         >
           Knowledge Base
@@ -31,7 +33,7 @@ export default function Header() {
           className={({ isActive }) =>
             isActive
               ? "text-blue-600 font-semibold"
-              : "text-gray-700 hover:text-blue-600"
+              : "text-gray-700 hover:text-orange-600"
           }
         >
           Submit a Ticket
@@ -41,7 +43,7 @@ export default function Header() {
           className={({ isActive }) =>
             isActive
               ? "text-blue-600 font-semibold"
-              : "text-gray-700 hover:text-blue-600"
+              : "text-gray-700 hover:text-orange-600"
           }
         >
           Contact
@@ -51,7 +53,7 @@ export default function Header() {
           className={({ isActive }) =>
             isActive
               ? "text-blue-600 font-semibold"
-              : "text-gray-700 hover:text-blue-600"
+              : "text-gray-700 hover:text-orange-600"
           }
         >
           Login

@@ -16,7 +16,7 @@ export default function HeroSection() {
       <input
         type="text"
         placeholder="Search help articles, topics, or errors…"
-        className="w-full max-w-xl px-4 py-2 border rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
+        className="w-full max-w-xl px-4 py-2 border rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-700 bg-blue-200 text-gray-700 placeholder-gray-400"
       />
     </section>
   );

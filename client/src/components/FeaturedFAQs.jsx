@@ -3,7 +3,7 @@ import React from 'react';
 export default function FeaturedFAQs() {
   return (
     <section className="max-w-3xl mx-auto px-8 py-8">
-      <h2 className="text-2xl font-bold mb-4">Top FAQs</h2>
+      <h2 className="text-2xl font-bold mb-4 text-white-400">Featured Articles</h2>
       <ul className="space-y-2">
         <li>
           <a href="#" className="text-blue-600 hover:underline">How do I reset my password?</a>
