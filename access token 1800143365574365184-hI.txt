@@ -1,0 +1,16 @@
+access token 1800143365574365184-hIMtxrG4Vz35Gb5lXQS7oiiqFuBwyk
+
+access token secret pndOUcujXbOorsweBymKxwlA7cYOv2uy0dKlQlSKEoZJE
+
+bearer token AAAAAAAAAAAAAAAAAAAAAAzl2AEAAAAA%2FoMmHXoJQJagqYWwuhmLhEApqAc%3DaG2LMPvgdRRqGkXDCCx6GCZKgdspFOWZ3XQBvOx2mMwb29prUJ
+
+api key	QyFlH8JS5H0H0f90WdCnttM40
+
+api key secret TghvTRFCsog8FmHNqFHXVXXTjyRwhKIEybo8vSHCK3hv6OewxG
+
+
+oauth
+
+client ID	b0tVdkpvQVdYemg1REFOUDRkTU46MTpjaQ
+
+client secret	DxmQf5sMGJf1VdFBQjdURtkPnXlEgbJUZGWeajPOvfnvXkBqbD

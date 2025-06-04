@@ -3,11 +3,11 @@ import { NavLink } from 'react-router-dom';
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-between px-8 py-4 bg-white shadow">
+    <header className="flex items-center justify-between flex-wrap px-4 sm:px-8 py-4 bg-white shadow">
       {/* Company Name Left */}
       <div className="font-bold text-2xl text-blue-600">FirxtTech</div>
       {/* Nav Buttons Right */}
-      <nav className="flex space-x-12">
+      <nav className="flex flex-wrap gap-x-4 sm:gap-x-8 md:gap-x-12 gap-y-2 justify-end">
         <NavLink
           to="/"
           className={({ isActive }) =>

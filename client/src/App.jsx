@@ -6,7 +6,9 @@ import Home from './pages/Home';
 import KnowledgeBase from './pages/KnowledgeBase';
 import SubmitTicket from './pages/SubmitTicket';
 import Contact from './pages/Contact';
-import Login from './pages/Login';
+import AuthPage from './pages/AuthPage';
+import Dashboard from './pages/Dashboard';
+import ProtectedRoute from './components/ProtectedRoute';
 // import other pages as you create them
 
 function App() {
@@ -20,7 +22,17 @@ function App() {
             <Route path="/knowledge-base" element={<KnowledgeBase />} />
             <Route path="/submit-ticket" element={<SubmitTicket />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<AuthPage />} />
+            <Route path="/signup" element={<AuthPage />} />
+            <Route path="/forgot-password" element={<AuthPage />} />
+            <Route
+              path="/dashboard"
+              element={
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
         </main>
         <Footer />

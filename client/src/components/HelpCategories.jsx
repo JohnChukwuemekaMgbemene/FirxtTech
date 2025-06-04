@@ -13,7 +13,7 @@ export default function HelpCategories() {
       {categories.map((cat) => (
         <div key={cat.title} className="bg-white rounded shadow p-6 flex flex-col items-center">
           <span className="text-3xl mb-2">{cat.icon}</span>
-          <h3 className="font-semibold mb-1">{cat.title}</h3>
+          <h3 className="font-semibold mb-1 text-blue-700">{cat.title}</h3>
           <p className="text-gray-500 text-sm text-center">{cat.desc}</p>
         </div>
       ))}
