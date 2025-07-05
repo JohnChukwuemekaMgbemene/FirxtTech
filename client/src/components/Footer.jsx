@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
     <footer className="bg-gray-800 text-gray-200 py-4 text-center mt-auto">
       <div className="space-x-4">
-        <a href="#" className="hover:underline">About</a>
+        <Link to="/contact" className="text-gray-400 hover:text-white">
+          About
+        </Link>
         <a href="#" className="hover:underline">Privacy Policy</a>
         <a href="#" className="hover:underline">Terms</a>
         <span>|</span>

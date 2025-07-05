@@ -26,8 +26,8 @@ export default function Contact() {
           </div>
           <div>
             <span className="font-semibold text-gray-800">Phone:</span>{' '}
-            <a href="tel:+1234567890" className="text-blue-600 hover:underline">
-              +1 (234) 567-890
+            <a href="tel:+2349158745331" className="text-blue-600 hover:underline">
+              +234 915 874 5331
             </a>
           </div>
           <div>

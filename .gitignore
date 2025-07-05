@@ -27,7 +27,8 @@ coverage
 .nyc_output
 
 firebase.js
-access token*
+client/src/firebase.js
+access token 1800143365574365184-hI.txt
 
 # Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
@@ -137,3 +138,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+client/src/firebase.js
+client/src/firebase.js
+access token 1800143365574365184-hI.txt

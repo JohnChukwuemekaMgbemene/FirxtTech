@@ -9,6 +9,8 @@ import Contact from './pages/Contact';
 import AuthPage from './pages/AuthPage';
 import Dashboard from './pages/Dashboard';
 import ProtectedRoute from './components/ProtectedRoute';
+import Tools from './pages/Tools'; 
+import Services from './pages/Services';
 // import other pages as you create them
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
             <Route path="/login" element={<AuthPage />} />
             <Route path="/signup" element={<AuthPage />} />
             <Route path="/forgot-password" element={<AuthPage />} />
+            <Route path="/tools" element={<Tools />} />
+            <Route path="/services" element={<Services />} />
             <Route
               path="/dashboard"
               element={

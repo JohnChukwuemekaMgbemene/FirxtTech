@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function HeroSection() {
   return (
@@ -6,12 +7,16 @@ export default function HeroSection() {
       <h1 className="text-4xl font-bold mb-2 text-blue-800">Need Help? We’ve Got You Covered.</h1>
       <p className="text-lg text-gray-700 mb-6">Quick solutions and expert support for all your tech needs.</p>
       <div className="flex space-x-4 mb-8">
-        <button className="bg-orange-600 text-white px-8 py-2 rounded hover:bg-orange-700 flex items-center">
-          <span className="mr-2">🔍</span> Search Help Articles
-        </button>
-        <button className="bg-orange-600 text-white px-8 py-2 rounded hover:bg-orange-700 flex items-center">
+        <Link
+          to="/tools"
+          className="bg-orange-600 text-white px-8 py-2 rounded hover:bg-orange-700 flex items-center">
+          <span className="mr-2">🛠️</span> Browse Tools
+        </Link>
+        <Link
+          to="/services"
+          className="bg-orange-600 text-white px-8 py-2 rounded hover:bg-orange-700 flex items-center">
           <span className="mr-2">🛎️</span> Browse Services
-        </button>
+        </Link>
       </div>
       <input
         type="text"

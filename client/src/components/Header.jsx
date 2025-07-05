@@ -39,16 +39,6 @@ export default function Header() {
           Submit a Ticket
         </NavLink>
         <NavLink
-          to="/contact"
-          className={({ isActive }) =>
-            isActive
-              ? "text-blue-600 font-semibold"
-              : "text-gray-700 hover:text-orange-600"
-          }
-        >
-          Contact
-        </NavLink>
-        <NavLink
           to="/login"
           className={({ isActive }) =>
             isActive
