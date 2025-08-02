@@ -11,7 +11,9 @@ import Dashboard from './pages/Dashboard';
 import ProtectedRoute from './components/ProtectedRoute';
 import Tools from './pages/Tools'; 
 import Services from './pages/Services';
-// import other pages as you create them
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost'; 
+// import { blogArticles } from './data/blog/articles'; 
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
             <Route path="/forgot-password" element={<AuthPage />} />
             <Route path="/tools" element={<Tools />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route
               path="/dashboard"
               element={

@@ -72,3 +72,77 @@ button:focus-visible {
   @apply w-full px-4 py-2 border border-black rounded focus:outline-none focus:ring-2 focus:ring-blue-300 placeholder-gray-400 text-gray-900;
 }
 
+/* Blog post content styling */
+.prose {
+  max-width: none;
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #374151;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+.prose ul {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+  color: #4b5563;
+}
+
+.prose code {
+  background-color: #f3f4f6;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+}
+
+/* Enhanced code block styles */
+.code-block-container {
+  position: relative;
+  margin: 1.5rem 0;
+}
+
+.code-block-container:hover .copy-button {
+  opacity: 1;
+}
+
+.copy-button {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.copy-button:hover {
+  transform: translateY(-1px);
+}
+
+/* Terminal-style animations */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.terminal-cursor {
+  animation: blink 1s infinite;
+}
+

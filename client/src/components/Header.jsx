@@ -48,6 +48,16 @@ export default function Header() {
         >
           Login
         </NavLink>
+        <NavLink
+          to="/blog"
+          className={({ isActive }) =>
+            isActive
+              ? "text-blue-600 font-semibold"
+              : "text-gray-700 hover:text-orange-600"
+          }
+        >
+          Blog
+        </NavLink>
       </nav>
     </header>
   );
