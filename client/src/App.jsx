@@ -13,12 +13,14 @@ import Tools from './pages/Tools';
 import Services from './pages/Services';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost'; 
-// import { blogArticles } from './data/blog/articles'; 
+import ScrollToTop from './components/ScrollToTop';
+
 
 function App() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Router>
+        <ScrollToTop />
         <Header />
         <main className="flex-grow">
           <Routes>

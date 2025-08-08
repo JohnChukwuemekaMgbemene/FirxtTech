@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { getArticleBySlug } from '../utils/blogHelpers'; // Use helper
 import CodeBlock from '../components/CodeBlock'; // Import the CodeBlock component
+import CommentSection from '../components/CommentSection';
 
 export default function BlogPost() {
   const { slug } = useParams();
@@ -263,6 +264,9 @@ export default function BlogPost() {
           </div>
         </div>
       </footer>
+
+      {/* Comment Section */}
+      <CommentSection articleSlug={slug} />
 
       {/* Call to Action - Colorful Section */}
       <div className="mt-8 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg p-8 text-center">
