@@ -3,6 +3,7 @@ import HeroSection from '../components/HeroSection';
 import HelpCategories from '../components/HelpCategories';
 import FeaturedFAQs from '../components/FeaturedFAQs';
 import ContactTeaser from '../components/ContactTeaser';
+import SEO from '../components/SEO';
 
 const images = [
   "/stefan-stefancik-5p_7M5MP2Iw-unsplash.jpg",
@@ -22,7 +23,12 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <div>
+      <SEO 
+        title="Professional Computer Support & Tech Solutions"
+        description="Get expert computer repair, remote support, and technical assistance. Fix Windows problems, performance issues, and hardware troubles."
+        keywords="computer repair, remote support, tech help, PC troubleshooting"
+      />
       <HeroSection />
       <section
         className="relative py-10 px-8 transition-all duration-700"
@@ -40,6 +46,6 @@ export default function Home() {
         </div>
       </section>
       <ContactTeaser />
-    </>
+    </div>
   );
 }

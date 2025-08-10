@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -12,6 +12,7 @@
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.8",
     "@tailwindcss/vite": "^4.1.8",
+    "@vercel/analytics": "^1.5.0",
     "axios": "^1.9.0",
     "firebase": "^11.8.1",
     "framer-motion": "^12.16.0",

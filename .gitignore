@@ -141,3 +141,19 @@ dist
 client/src/firebase.js
 client/src/firebase.js
 access token 1800143365574365184-hI.txt
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.development
+
+# Server environment
+server/.env
+server/.env.local
+server/.env.production
+
+# Client environment  
+client/.env
+client/.env.local
+client/.env.production

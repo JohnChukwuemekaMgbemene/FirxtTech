@@ -5,6 +5,7 @@ import remarkGfm from 'remark-gfm';
 import { getArticleBySlug } from '../utils/blogHelpers'; // Use helper
 import CodeBlock from '../components/CodeBlock'; // Import the CodeBlock component
 import CommentSection from '../components/CommentSection';
+import SEO from '../components/SEO';
 
 export default function BlogPost() {
   const { slug } = useParams();
@@ -132,6 +133,13 @@ export default function BlogPost() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-10">
+      <SEO 
+        title={article.title}
+        description={article.excerpt}
+        keywords={article.tags.join(', ')}
+        type="article"
+      />
+    
       {/* Navigation */}
       <div className="mb-8">
         <Link to="/blog" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">

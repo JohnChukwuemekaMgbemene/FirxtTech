@@ -1,13 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { getFeaturedArticle, getRegularArticles } from '../utils/blogHelpers'; // Use helpers
+import SEO from '../components/SEO';
 
 export default function Blog() {
   const featuredArticle = getFeaturedArticle();
   const regularArticles = getRegularArticles();
 
   return (
-    <section className="max-w-4xl mx-auto px-4 py-10">
+    <div className="max-w-7xl mx-auto px-4 py-10">
+      <SEO 
+        title="Tech Blog"
+        description="Professional computer support guides, troubleshooting tips, and technical solutions for common PC problems."
+        keywords="computer repair, tech support, troubleshooting, windows problems"
+      />
       <h1 className="text-3xl font-bold mb-6 text-blue-700">Tech Blog</h1>
       <p className="text-gray-700 mb-8">
         Stay updated with the latest tech trends, tips, and insights from our experts.
@@ -56,6 +62,6 @@ export default function Blog() {
           </button>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
