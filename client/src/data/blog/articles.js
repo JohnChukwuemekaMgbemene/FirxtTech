@@ -18,7 +18,7 @@ export const blogArticles = [
     date: '2025-09-01',
     readTime: '6 min read',
     featured: false,
-    category: 'Hardware',
+    category: 'Networking',
     tags: ['wifi', 'bluetooth', 'connectivity']
   },
   {
@@ -51,7 +51,7 @@ export const blogArticles = [
     date: '2025-09-01',
     readTime: '5 min read',
     featured: false,
-    category: 'Hardware',
+    category: 'Operating System',
     tags: ['user', 'files', 'management', 'troubleshooting']
   },
   {

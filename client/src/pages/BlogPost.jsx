@@ -65,6 +65,20 @@ export default function BlogPost() {
           badge: 'bg-purple-100 text-purple-800',
           accent: 'text-purple-600'
         };
+      case 'Networking':
+        return {
+          bg: 'bg-teal-50',
+          border: 'border-teal-500',
+          badge: 'bg-teal-100 text-teal-800',
+          accent: 'text-teal-600'
+        };
+      case 'Operating System':
+        return {
+          bg: 'bg-indigo-50',
+          border: 'border-indigo-500',
+          badge: 'bg-indigo-100 text-indigo-800',
+          accent: 'text-indigo-600'
+        };
       default:
         return {
           bg: 'bg-gray-50',

@@ -7,26 +7,26 @@ export default function FeaturedFAQs() {
       <ul className="space-y-4">
         <li>
           <a
-            href="#"
+            href="./blog/windows-update-problems"
             className="block bg-gray/80 hover:bg-white/80 transition rounded-lg px-8 py-3 shadow text-white text-left font-medium backdrop-blur"
           >
-            ◉ How do I reset my password?
+            ◉ Windows Update Troubleshooting Guide
           </a>
         </li>
         <li>
           <a
-            href="#"
+            href="./blog/system-cleanup-optimization"
             className="block bg-gray/80 hover:bg-white/80 transition rounded-lg px-8 py-3 shadow text-white text-left font-medium backdrop-blur"
           >
-            ◉ How can I track my support ticket?
+            ◉ How to optimize and clean your PC
           </a>
         </li>
         <li>
           <a
-            href="#"
+            href="./blog/wifi-bluetooth-connectivity"
             className="block bg-gray/80 hover:bg-white/80 transition rounded-lg px-8 py-3 shadow text-white text-left font-medium backdrop-blur"
           >
-            ◉ Where can I download product updates?
+            ◉ How to fix bluetooth and Wi-Fi connectivity issues
           </a>
         </li>
       </ul>

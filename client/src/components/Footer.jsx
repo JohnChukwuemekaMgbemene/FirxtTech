@@ -107,8 +107,8 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
             <div>
               <h4 className="font-semibold mb-2">Contact Us</h4>
-              <p className="text-gray-400">Email: support@firxttech.com</p>
-              <p className="text-gray-400">Phone: (555) 123-4567</p>
+              <p>Email: <a href="mailto:remotecks247@gmail.com" className="text-gray-400">remotecks247@gmail.com</a></p>
+              <p>Phone: <a href="tel:+2349158745331" className="text-gray-400">+2349158745331</a></p>
             </div>
             <div>
               <h4 className="font-semibold mb-2">Business Hours</h4>
