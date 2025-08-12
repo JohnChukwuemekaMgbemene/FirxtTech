@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { Home as HomeIcon, BookOpen, Send, Newspaper, LogIn } from 'lucide-react';
 
 export default function Header() {
   return (
@@ -16,7 +17,10 @@ export default function Header() {
               : "text-gray-700 hover:text-orange-600"
           }
         >
-          Home
+          <span className="inline-flex items-center gap-1">
+            <HomeIcon className="h-4 w-4" aria-hidden="true" />
+            <span>Home</span>
+          </span>
         </NavLink>
         <NavLink
           to="/knowledge-base"
@@ -26,7 +30,10 @@ export default function Header() {
               : "text-gray-700 hover:text-orange-600"
           }
         >
-          Knowledge Base
+          <span className="inline-flex items-center gap-1">
+            <BookOpen className="h-4 w-4" aria-hidden="true" />
+            <span>Knowledge Base</span>
+          </span>
         </NavLink>
         <NavLink
           to="/submit-ticket"
@@ -36,7 +43,10 @@ export default function Header() {
               : "text-gray-700 hover:text-orange-600"
           }
         >
-          Submit a Ticket
+          <span className="inline-flex items-center gap-1">
+            <Send className="h-4 w-4" aria-hidden="true" />
+            <span>Submit a Ticket</span>
+          </span>
         </NavLink>
         <NavLink
           to="/blog"
@@ -46,7 +56,10 @@ export default function Header() {
               : "text-gray-700 hover:text-orange-600"
           }
         >
-          Blog
+          <span className="inline-flex items-center gap-1">
+            <Newspaper className="h-4 w-4" aria-hidden="true" />
+            <span>Blog</span>
+          </span>
         </NavLink>
         <NavLink
           to="/login"
@@ -56,7 +69,10 @@ export default function Header() {
               : "text-gray-700 hover:text-orange-600"
           }
         >
-          Login
+          <span className="inline-flex items-center gap-1">
+            <LogIn className="h-4 w-4" aria-hidden="true" />
+            <span>Login</span>
+          </span>
         </NavLink>
       </nav>
     </header>
