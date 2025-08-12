@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/github.css'; // You can switch theme, e.g. 'github-dark.css'
+import { Copy as CopyIcon, Check as CheckIcon } from 'lucide-react';
 
 const CodeBlock = ({ children, className, inline, ...props }) => {
   const [copied, setCopied] = useState(false);
@@ -55,7 +56,6 @@ const CodeBlock = ({ children, className, inline, ...props }) => {
 
   return (
     <div className="my-4 flex flex-wrap items-start gap-2">
-      {/* Code container spans article width; shrinks before wrapping */}
       <div className="min-w-0 flex-1">
         <div className="w-full rounded-lg border border-gray-300 bg-white">
           <pre className="m-0 w-full overflow-x-auto whitespace-pre px-2 py-1 text-left leading-[1.6]">
@@ -67,8 +67,6 @@ const CodeBlock = ({ children, className, inline, ...props }) => {
           </pre>
         </div>
       </div>
-
-      {/* Copy button outside, after the container; won’t overlay and will wrap below on very small screens */}
       <button
         type="button"
         onClick={handleCopy}
@@ -78,16 +76,11 @@ const CodeBlock = ({ children, className, inline, ...props }) => {
       >
         {copied ? (
           <span className="flex items-center gap-1">
-            <svg className="h-4 w-4 text-green-600" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M16.704 5.29a1 1 0 010 1.415l-7.999 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414l3.293 3.292 7.292-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-            </svg>
+            <CheckIcon className="h-4 w-4 text-green-600" />
             Copied
           </span>
         ) : (
-          <svg className="h-4 w-4 text-gray-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path d="M8 3a1 1 0 011-1h6a1 1 0 011 1v11a1 1 0 11-2 0V4H9a1 1 0 01-1-1z" />
-            <path d="M4 6a2 2 0 012-2h6a1 1 0 110 2H6v8a1 1 0 11-2 0V6z" />
-          </svg>
+          <CopyIcon className="h-4 w-4 text-gray-700" />
         )}
       </button>
     </div>

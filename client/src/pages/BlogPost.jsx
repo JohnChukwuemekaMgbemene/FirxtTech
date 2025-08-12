@@ -7,6 +7,7 @@ import CodeBlock from '../components/CodeBlock'; // Import the CodeBlock compone
 import CommentSection from '../components/CommentSection';
 import SEO from '../components/SEO';
 import BackToTop from '../components/BackToTop';
+import { ArrowLeft, CalendarDays, Timer, Eye, ListChecks, Tag, Lightbulb, ChevronRight, Copy as CopyIcon, Check as CheckIcon } from 'lucide-react';
 
 export default function BlogPost() {
   const { slug } = useParams();
@@ -145,7 +146,9 @@ export default function BlogPost() {
         {/* Navigation */}
         <div className="mb-8">
           <Link to="/blog" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
-            <span className="mr-2">←</span>
+            {/* ...existing code... */}
+            {/* replace arrow emoji */}
+            <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Blog
           </Link>
         </div>
@@ -167,15 +170,15 @@ export default function BlogPost() {
           {/* Meta Information */}
           <div className="flex flex-wrap items-center gap-4 text-gray-600 mb-4">
             <div className="flex items-center">
-              <span className="mr-2">📅</span>
+              <CalendarDays className="mr-2 h-4 w-4" />
               <span>{article.date}</span>
             </div>
             <div className="flex items-center">
-              <span className="mr-2">⏱️</span>
+              <Timer className="mr-2 h-4 w-4" />
               <span>{article.readTime}</span>
             </div>
             <div className="flex items-center">
-              <span className="mr-2">👁️</span>
+              <Eye className="mr-2 h-4 w-4" />
               <span>Tech Support Guide</span>
             </div>
           </div>
@@ -189,7 +192,7 @@ export default function BlogPost() {
         {/* Table of Contents - Colorful Section */}
         <div className="bg-gradient-to-r from-gray-50 to-gray-100 border border-gray-200 rounded-lg p-6 mb-8">
           <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
-            <span className="mr-2">📋</span>
+            <ListChecks className="mr-2 h-5 w-5 text-gray-700" />
             Quick Navigation
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
@@ -231,7 +234,8 @@ export default function BlogPost() {
               ),
               li: ({node, ...props}) => (
                 <li className="flex items-start text-gray-700 text-left">
-                  <span className={`${colors.accent} mr-3 mt-1 text-sm`}>▶</span>
+                  {/* replace triangle bullet */}
+                  <ChevronRight className={`${colors.accent} mr-3 mt-1 h-4 w-4 flex-shrink-0`} />
                   <div className="flex-1 min-w-0" {...props} />
                 </li>
               ),
@@ -249,7 +253,7 @@ export default function BlogPost() {
               blockquote: ({node, ...props}) => (
                 <blockquote className={`${colors.border} border-l-4 ${colors.bg} p-6 my-8 italic rounded-r-lg`}>
                   <div className="flex items-start">
-                    <span className={`${colors.accent} text-2xl mr-3`}>💡</span>
+                    <Lightbulb className={`${colors.accent} mr-3 h-5 w-5 flex-shrink-0`} />
                     <div {...props} />
                   </div>
                 </blockquote>
@@ -275,7 +279,7 @@ export default function BlogPost() {
         <footer className="mt-12 pt-8 border-t border-gray-200">
           <div className={`${colors.bg} rounded-lg p-6`}>
             <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-              <span className="mr-2">🏷️</span>
+              <Tag className="mr-2 h-5 w-5" />
               Related Topics
             </h3>
             <div className="flex flex-wrap gap-2">
@@ -352,17 +356,12 @@ const CommandBlock = ({ command }) => {
         >
           {copied ? (
             <>
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-              </svg>
+              <CheckIcon className="w-4 h-4" />
               Copied!
             </>
           ) : (
             <>
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"/>
-                <path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z"/>
-              </svg>
+              <CopyIcon className="w-4 h-4" />
               Copy
             </>
           )}

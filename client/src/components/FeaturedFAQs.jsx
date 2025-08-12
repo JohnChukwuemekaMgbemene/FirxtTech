@@ -1,4 +1,5 @@
 import React from 'react';
+import { ChevronRight } from 'lucide-react';
 
 export default function FeaturedFAQs() {
   return (
@@ -10,7 +11,10 @@ export default function FeaturedFAQs() {
             href="./blog/windows-update-problems"
             className="block bg-gray/80 hover:bg-white/80 transition rounded-lg px-8 py-3 shadow text-white text-left font-medium backdrop-blur"
           >
-            ◉ Windows Update Troubleshooting Guide
+            <span className="inline-flex items-center gap-2">
+              <ChevronRight className="h-4 w-4 text-current" aria-hidden="true" />
+              <span>Windows Update Troubleshooting Guide</span>
+            </span>
           </a>
         </li>
         <li>
@@ -18,7 +22,10 @@ export default function FeaturedFAQs() {
             href="./blog/system-cleanup-optimization"
             className="block bg-gray/80 hover:bg-white/80 transition rounded-lg px-8 py-3 shadow text-white text-left font-medium backdrop-blur"
           >
-            ◉ How to optimize and clean your PC
+            <span className="inline-flex items-center gap-2">
+              <ChevronRight className="h-4 w-4 text-current" aria-hidden="true" />
+              <span>How to optimize and clean your PC</span>
+            </span>
           </a>
         </li>
         <li>
@@ -26,7 +33,10 @@ export default function FeaturedFAQs() {
             href="./blog/wifi-bluetooth-connectivity"
             className="block bg-gray/80 hover:bg-white/80 transition rounded-lg px-8 py-3 shadow text-white text-left font-medium backdrop-blur"
           >
-            ◉ How to fix bluetooth and Wi-Fi connectivity issues
+            <span className="inline-flex items-center gap-2">
+              <ChevronRight className="h-4 w-4 text-current" aria-hidden="true" />
+              <span>How to fix bluetooth and Wi-Fi connectivity issues</span>
+            </span>
           </a>
         </li>
       </ul>

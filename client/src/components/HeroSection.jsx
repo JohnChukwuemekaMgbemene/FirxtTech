@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Wrench, ConciergeBell } from 'lucide-react';
 
 export default function HeroSection() {
   return (
@@ -10,12 +11,14 @@ export default function HeroSection() {
         <Link
           to="/tools"
           className="bg-orange-600 text-white px-8 py-2 rounded hover:bg-orange-700 flex items-center">
-          <span className="mr-2">🛠️</span> Browse Tools
+          <Wrench className="mr-2 h-5 w-5" aria-hidden="true" />
+          Browse Tools
         </Link>
         <Link
           to="/services"
           className="bg-orange-600 text-white px-8 py-2 rounded hover:bg-orange-700 flex items-center">
-          <span className="mr-2">🛎️</span> Browse Services
+          <ConciergeBell className="mr-2 h-5 w-5" aria-hidden="true" />
+          Browse Services
         </Link>
       </div>
       <input

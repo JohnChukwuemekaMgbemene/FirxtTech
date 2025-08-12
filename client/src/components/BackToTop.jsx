@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { ArrowUp } from 'lucide-react';
 
 export default function BackToTop() {
   const [visible, setVisible] = useState(false);
@@ -23,9 +24,7 @@ export default function BackToTop() {
       title="Back to top"
       aria-label="Back to top"
     >
-      <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-        <path fillRule="evenodd" d="M10 3a1 1 0 01.707.293l5 5a1 1 0 11-1.414 1.414L11 6.414V17a1 1 0 11-2 0V6.414L5.707 9.707A1 1 0 114.293 8.293l5-5A1 1 0 0110 3z" clipRule="evenodd" />
-      </svg>
+      <ArrowUp className="h-5 w-5" />
     </button>
   ) : null;
 }
