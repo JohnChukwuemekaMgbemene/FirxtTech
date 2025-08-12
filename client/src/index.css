@@ -109,7 +109,7 @@ button:focus-visible {
   color: #4b5563;
 }
 
-.prose code {
+.prose code:not(.inline-cmd):not(.hljs) {
   background-color: #f3f4f6;
   padding: 0.125rem 0.25rem;
   border-radius: 0.25rem;
@@ -144,5 +144,30 @@ button:focus-visible {
 
 .terminal-cursor {
   animation: blink 1s infinite;
+}
+
+/* Remove default hljs inner padding so our pre padding is the only spacing */
+.hljs {
+  padding: 0 !important;
+  background: transparent; /* keep container background visible */
+  line-height: 1.6;        /* match CodeBlock leading */
+}
+
+/* Ensure prose doesn’t re-introduce spacing inside code blocks */
+.prose pre code.hljs {
+  padding: 0 !important;
+}
+
+.prose img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Allow inline code “chips” to wrap nicely across lines and keep rounded corners per line */
+.inline-cmd {
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  overflow-wrap: anywhere; /* better than break-word for long paths/urls */
 }
 

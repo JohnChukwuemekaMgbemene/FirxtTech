@@ -120,7 +120,7 @@ Before beginning cleanup, establish your system's current performance metrics:
 **Reset Windows Update Components:**
 1. Open Command Prompt as Administrator
 2. Stop Windows Update services:
-   ```
+   ```cmd
    net stop wuauserv
    net stop cryptSvc
    net stop bits
