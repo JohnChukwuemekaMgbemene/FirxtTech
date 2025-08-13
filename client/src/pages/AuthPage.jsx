@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion as M, AnimatePresence } from 'framer-motion';
 import Login from './Login';
 import Signup from './Signup';
 import ForgotPassword from './ForgotPassword';
@@ -64,7 +64,7 @@ export default function AuthPage() {
         {/* Image Panel */}
         <AnimatePresence initial={false} mode="wait">
           {showImage && (
-            <motion.div
+            <M.div
               key={imageKey}
               custom={imageCustom}
               variants={panelVariants}
@@ -79,12 +79,12 @@ export default function AuthPage() {
                 alt="Login Illustration"
                 className="w-4/5 max-h-[400px] animate-bounce-slow"
               />
-            </motion.div>
+            </M.div>
           )}
         </AnimatePresence>
         {/* Form Panel */}
         <AnimatePresence initial={false} mode="wait">
-          <motion.div
+          <M.div
             key={formKey}
             custom={formCustom}
             variants={panelVariants}
@@ -95,7 +95,7 @@ export default function AuthPage() {
             style={{ minWidth: 0 }}
           >
             {formComponent}
-          </motion.div>
+          </M.div>
         </AnimatePresence>
         {/* Bounce animation */}
         <style>

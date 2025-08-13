@@ -2,16 +2,27 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { getArticleBySlug } from '../utils/blogHelpers'; // Use helper
-import CodeBlock from '../components/CodeBlock'; // Import the CodeBlock component
+import { getArticleBySlug } from '../utils/blogHelpers';
+import CodeBlock from '../components/CodeBlock';
 import CommentSection from '../components/CommentSection';
 import SEO from '../components/SEO';
 import BackToTop from '../components/BackToTop';
-import { ArrowLeft, CalendarDays, Timer, Eye, ListChecks, Tag, Lightbulb, ChevronRight, Copy as CopyIcon, Check as CheckIcon } from 'lucide-react';
+import {
+  ArrowLeft,
+  CalendarDays,
+  Timer,
+  Eye,
+  ListChecks,
+  Tag,
+  Lightbulb,
+  ChevronRight,
+  Copy as CopyIcon,
+  Check as CheckIcon,
+} from 'lucide-react';
 
 export default function BlogPost() {
   const { slug } = useParams();
-  const article = getArticleBySlug(slug); // Instead of blogArticles.find()
+  const article = getArticleBySlug(slug);
   const [content, setContent] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -19,17 +30,15 @@ export default function BlogPost() {
   useEffect(() => {
     if (article) {
       fetch(`/blog-content/${article.slug}.md`)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Markdown file not found');
-          }
+        .then((response) => {
+          if (!response.ok) throw new Error('Markdown file not found');
           return response.text();
         })
-        .then(markdownContent => {
+        .then((markdownContent) => {
           setContent(markdownContent);
           setLoading(false);
         })
-        .catch(err => {
+        .catch((err) => {
           console.error('Content not found:', err);
           setError(true);
           setLoading(false);
@@ -37,57 +46,56 @@ export default function BlogPost() {
     }
   }, [article]);
 
-  // Category color schemes
   const getCategoryColors = (category) => {
-    switch(category) {
+    switch (category) {
       case 'Windows':
         return {
           bg: 'bg-blue-50',
           border: 'border-blue-500',
           badge: 'bg-blue-100 text-blue-800',
-          accent: 'text-blue-600'
+          accent: 'text-blue-600',
         };
       case 'Hardware':
         return {
           bg: 'bg-green-50',
           border: 'border-green-500',
           badge: 'bg-green-100 text-green-800',
-          accent: 'text-green-600'
+          accent: 'text-green-600',
         };
       case 'Performance':
         return {
           bg: 'bg-orange-50',
           border: 'border-orange-500',
           badge: 'bg-orange-100 text-orange-800',
-          accent: 'text-orange-600'
+          accent: 'text-orange-600',
         };
       case 'Software':
         return {
           bg: 'bg-purple-50',
           border: 'border-purple-500',
           badge: 'bg-purple-100 text-purple-800',
-          accent: 'text-purple-600'
+          accent: 'text-purple-600',
         };
       case 'Networking':
         return {
           bg: 'bg-teal-50',
           border: 'border-teal-500',
           badge: 'bg-teal-100 text-teal-800',
-          accent: 'text-teal-600'
+          accent: 'text-teal-600',
         };
       case 'Operating System':
         return {
           bg: 'bg-indigo-50',
           border: 'border-indigo-500',
           badge: 'bg-indigo-100 text-indigo-800',
-          accent: 'text-indigo-600'
+          accent: 'text-indigo-600',
         };
       default:
         return {
           bg: 'bg-gray-50',
           border: 'border-gray-500',
           badge: 'bg-gray-100 text-gray-800',
-          accent: 'text-gray-600'
+          accent: 'text-gray-600',
         };
     }
   };
@@ -136,38 +144,29 @@ export default function BlogPost() {
   return (
     <>
       <div className="max-w-4xl mx-auto px-4 py-10">
-        <SEO 
+        <SEO
           title={article.title}
           description={article.excerpt}
           keywords={article.tags.join(', ')}
           type="article"
         />
-      
-        {/* Navigation */}
+
         <div className="mb-8">
           <Link to="/blog" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
-            {/* ...existing code... */}
-            {/* replace arrow emoji */}
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Blog
           </Link>
         </div>
 
-        {/* Article Header - Colorful Section */}
         <header className={`${colors.bg} ${colors.border} border-l-4 rounded-r-lg p-8 mb-8`}>
-          {/* Category Badge */}
           <div className="mb-4">
             <span className={`${colors.badge} px-3 py-1 rounded-full text-sm font-semibold`}>
               {article.category}
             </span>
           </div>
 
-          {/* Title */}
-          <h1 className="text-4xl font-bold mb-4 text-gray-800 leading-tight">
-            {article.title}
-          </h1>
+          <h1 className="text-4xl font-bold mb-4 text-gray-800 leading-tight">{article.title}</h1>
 
-          {/* Meta Information */}
           <div className="flex flex-wrap items-center gap-4 text-gray-600 mb-4">
             <div className="flex items-center">
               <CalendarDays className="mr-2 h-4 w-4" />
@@ -183,13 +182,9 @@ export default function BlogPost() {
             </div>
           </div>
 
-          {/* Excerpt */}
-          <p className="text-lg text-gray-700 leading-relaxed">
-            {article.excerpt}
-          </p>
+          <p className="text-lg text-gray-700 leading-relaxed">{article.excerpt}</p>
         </header>
 
-        {/* Table of Contents - Colorful Section */}
         <div className="bg-gradient-to-r from-gray-50 to-gray-100 border border-gray-200 rounded-lg p-6 mb-8">
           <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
             <ListChecks className="mr-2 h-5 w-5 text-gray-700" />
@@ -203,45 +198,37 @@ export default function BlogPost() {
           </div>
         </div>
 
-        {/* Article Content */}
         <article className="prose prose-lg max-w-none">
-          <ReactMarkdown 
+          <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             components={{
-              h1: ({node, ...props}) => (
-                <h1 className={`text-3xl font-bold mt-12 mb-6 ${colors.accent} border-b-2 ${colors.border} pb-2 text-left`} 
-                    {...props} />
+              h1: (props) => (
+                <h1
+                  className={`text-3xl font-bold mt-12 mb-6 ${colors.accent} border-b-2 ${colors.border} pb-2 text-left`}
+                  {...props}
+                />
               ),
-              h2: ({node, ...props}) => (
+              h2: (props) => (
                 <h2 className="text-2xl font-bold mt-10 mb-5 text-gray-800 flex items-start text-left">
-                  <span className={`w-1 h-8 ${colors.border.replace('border-', 'bg-')} mr-3 rounded flex-shrink-0 mt-1`}></span>
+                  <span className={`w-1 h-8 ${colors.border.replace('border-', 'bg-')} mr-3 rounded flex-shrink-0 mt-1`} />
                   <span {...props} />
                 </h2>
               ),
-              h3: ({node, ...props}) => (
-                <h3 className={`text-xl font-semibold mt-8 mb-4 ${colors.accent} text-left`} 
-                    {...props} />
+              h3: (props) => (
+                <h3 className={`text-xl font-semibold mt-8 mb-4 ${colors.accent} text-left`} {...props} />
               ),
-              h4: ({node, ...props}) => (
-                <h4 className={`text-lg font-semibold mt-6 mb-3 text-gray-700 text-left`} 
-                    {...props} />
+              h4: (props) => (
+                <h4 className={`text-lg font-semibold mt-6 mb-3 text-gray-700 text-left`} {...props} />
               ),
-              p: ({node, ...props}) => (
-                <p className="mb-6 text-gray-700 leading-8 text-lg text-left" {...props} />
-              ),
-              ul: ({node, ...props}) => (
-                <ul className="mb-6 space-y-3 pl-6 text-left" {...props} />
-              ),
-              li: ({node, ...props}) => (
+              p: (props) => <p className="mb-6 text-gray-700 leading-8 text-lg text-left" {...props} />,
+              ul: (props) => <ul className="mb-6 space-y-3 pl-6 text-left" {...props} />,
+              li: (props) => (
                 <li className="flex items-start text-gray-700 text-left">
-                  {/* replace triangle bullet */}
                   <ChevronRight className={`${colors.accent} mr-3 mt-1 h-4 w-4 flex-shrink-0`} />
                   <div className="flex-1 min-w-0" {...props} />
                 </li>
               ),
-              ol: ({node, ...props}) => (
-                <ol className="mb-6 space-y-3 pl-6 list-decimal text-left" {...props} />
-              ),
+              ol: (props) => <ol className="mb-6 space-y-3 pl-6 list-decimal text-left" {...props} />,
               code({ inline, className, children, ...props }) {
                 return (
                   <CodeBlock inline={inline} className={className} {...props}>
@@ -250,7 +237,7 @@ export default function BlogPost() {
                 );
               },
               pre: ({ children }) => <>{children}</>,
-              blockquote: ({node, ...props}) => (
+              blockquote: (props) => (
                 <blockquote className={`${colors.border} border-l-4 ${colors.bg} p-6 my-8 italic rounded-r-lg`}>
                   <div className="flex items-start">
                     <Lightbulb className={`${colors.accent} mr-3 h-5 w-5 flex-shrink-0`} />
@@ -258,24 +245,21 @@ export default function BlogPost() {
                   </div>
                 </blockquote>
               ),
-              table: ({node, ...props}) => (
+              table: (props) => (
                 <div className="overflow-x-auto my-8 rounded-lg border border-gray-200">
                   <table className="min-w-full" {...props} />
                 </div>
               ),
-              th: ({node, ...props}) => (
+              th: (props) => (
                 <th className={`${colors.bg} border border-gray-300 px-4 py-3 font-semibold text-left`} {...props} />
               ),
-              td: ({node, ...props}) => (
-                <td className="border border-gray-300 px-4 py-3" {...props} />
-              ),
+              td: (props) => <td className="border border-gray-300 px-4 py-3" {...props} />,
             }}
           >
             {content}
           </ReactMarkdown>
         </article>
 
-        {/* Tags Section - Colorful */}
         <footer className="mt-12 pt-8 border-t border-gray-200">
           <div className={`${colors.bg} rounded-lg p-6`}>
             <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
@@ -283,8 +267,11 @@ export default function BlogPost() {
               Related Topics
             </h3>
             <div className="flex flex-wrap gap-2">
-              {article.tags.map(tag => (
-                <span key={tag} className={`${colors.badge} px-3 py-2 rounded-full text-sm font-medium hover:shadow-md transition`}>
+              {article.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className={`${colors.badge} px-3 py-2 rounded-full text-sm font-medium hover:shadow-md transition`}
+                >
                   #{tag}
                 </span>
               ))}
@@ -292,24 +279,20 @@ export default function BlogPost() {
           </div>
         </footer>
 
-        {/* Comment Section */}
         <CommentSection articleSlug={slug} />
 
-        {/* Call to Action - Colorful Section */}
         <div className="mt-8 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg p-8 text-center">
           <h3 className="text-2xl font-bold mb-4">Need More Help?</h3>
-          <p className="mb-6 text-blue-100">
-            Our tech support experts are here to help you solve any computer problem.
-          </p>
+          <p className="mb-6 text-blue-100">Our tech support experts are here to help you solve any computer problem.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              to="/submit-ticket" 
+            <Link
+              to="/submit-ticket"
               className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition"
             >
               Submit a Ticket
             </Link>
-            <Link 
-              to="/contact" 
+            <Link
+              to="/contact"
               className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition"
             >
               Contact Support
@@ -326,7 +309,7 @@ export default function BlogPost() {
 // Command Block Component for special command formatting
 const CommandBlock = ({ command }) => {
   const [copied, setCopied] = useState(false);
-  
+
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(command);
@@ -339,7 +322,6 @@ const CommandBlock = ({ command }) => {
 
   return (
     <div className="relative bg-black text-green-400 rounded-lg p-4 my-6 font-mono group">
-      {/* Terminal Header */}
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center space-x-2">
           <div className="w-3 h-3 bg-red-500 rounded-full"></div>
@@ -347,8 +329,7 @@ const CommandBlock = ({ command }) => {
           <div className="w-3 h-3 bg-green-500 rounded-full"></div>
           <span className="text-gray-400 text-sm ml-2">Command Prompt</span>
         </div>
-        
-        {/* Copy Button */}
+
         <button
           onClick={handleCopy}
           className="bg-gray-800 hover:bg-gray-700 text-white px-3 py-1 rounded text-sm font-medium transition-all duration-200 opacity-0 group-hover:opacity-100 flex items-center gap-2"
@@ -367,8 +348,7 @@ const CommandBlock = ({ command }) => {
           )}
         </button>
       </div>
-      
-      {/* Command */}
+
       <div className="flex items-center">
         <span className="text-yellow-400 mr-2">C:\&gt;</span>
         <span className="text-green-400">{command}</span>
