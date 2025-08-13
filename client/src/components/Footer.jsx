@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Linkedin } from 'lucide-react';
+import { FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -120,13 +120,13 @@ const Footer = () => {
               <h4 className="font-semibold mb-2">Follow Us</h4>
               <div className="flex space-x-4 justify-center md:justify-start">
                 <a href="#" className="text-gray-400 hover:text-white transition-colors" aria-label="Facebook">
-                  <Facebook className="h-5 w-5" aria-hidden="true" />
+                  <FaFacebook className="h-5 w-5" aria-hidden="true" />
                 </a>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors" aria-label="Twitter">
-                  <Twitter className="h-5 w-5" aria-hidden="true" />
+                  <FaTwitter className="h-5 w-5" aria-hidden="true" />
                 </a>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
-                  <Linkedin className="h-5 w-5" aria-hidden="true" />
+                  <FaLinkedin className="h-5 w-5" aria-hidden="true" />
                 </a>
               </div>
             </div>
