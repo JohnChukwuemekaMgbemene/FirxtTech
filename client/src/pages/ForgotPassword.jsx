@@ -22,8 +22,8 @@ export default function ForgotPassword() {
   };
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold mb-4 text-blue-600">Reset Password</h1>
+    <div className="max-w-md w-full mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-2 text-blue-600">Reset Password</h1>
       <p className="text-gray-600 mb-6">
         Enter your email and we'll send you a link to reset your password.
       </p>
@@ -34,7 +34,7 @@ export default function ForgotPassword() {
           placeholder="Your Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full px-4 py-2 border border-black rounded"
+          className="w-full px-4 py-2 border border-gray-300 rounded text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
         />
         {sent && (

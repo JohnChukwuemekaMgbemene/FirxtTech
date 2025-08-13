@@ -33,7 +33,7 @@ const CodeBlock = ({ children, className, inline, ...props }) => {
   if (isInline) {
     return (
       <code
-        className="inline-cmd align-baseline font-mono text-sm text-gray-900 bg-gray-50 border border-gray-300 rounded-md px-1.5 py-0.5 whitespace-normal break-words max-w-full"
+        className="inline-cmd align-baseline font-mono text-sm text-gray-900 bg-gray-50 border border-gray-300 rounded-md px-1.5 py-1 whitespace-normal break-words max-w-full"
         {...props}
       >
         {rawCode}
@@ -58,7 +58,7 @@ const CodeBlock = ({ children, className, inline, ...props }) => {
     <div className="my-4 flex flex-wrap items-start gap-2">
       <div className="min-w-0 flex-1">
         <div className="w-full rounded-lg border border-gray-300 bg-white">
-          <pre className="m-0 w-full overflow-x-auto whitespace-pre px-2 py-1 text-left leading-[1.6]">
+          <pre className="m-0 w-full overflow-x-auto whitespace-pre px-3 py-3 text-left leading-[1.6]">
             <code
               className={`hljs font-mono text-sm ${lang ? `language-${lang}` : ''}`}
               dangerouslySetInnerHTML={{ __html: highlighted }}

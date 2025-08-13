@@ -25,8 +25,8 @@ export default function Login() {
   };
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold mb-4 text-blue-600">Login</h1>
+    <div className="max-w-md w-full mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-2 text-blue-600">Login</h1>
       <p className="text-gray-600 mb-6">Access your account to track tickets and more.</p>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
@@ -35,7 +35,7 @@ export default function Login() {
           value={form.email}
           onChange={handleChange}
           placeholder="@gmail.com"
-          className="w-full px-4 py-2 border border-black rounded text-gray-900 placeholder-gray-400"
+          className="w-full px-4 py-2 border border-gray-300 rounded text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
         />
         <input
@@ -44,13 +44,13 @@ export default function Login() {
           value={form.password}
           onChange={handleChange}
           placeholder="Password"
-          className="w-full px-4 py-2 border border-black rounded text-gray-900 placeholder-gray-400"
+          className="w-full px-4 py-2 border border-gray-300 rounded text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
         />
         {error && (
           <div className="text-red-600 text-sm">{error}</div>
         )}
-        <div className="flex justify-between items-center text-sm mb-2">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 text-sm mb-2">
           <Link to="/forgot-password" className="text-blue-600 hover:underline">
             Forgot your password?
           </Link>

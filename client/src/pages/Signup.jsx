@@ -36,20 +36,20 @@ export default function Signup() {
   };
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold mb-4 text-blue-600">Sign Up</h1>
+    <div className="max-w-md w-full mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-2 text-blue-600">Sign Up</h1>
       <p className="text-gray-600 mb-6">Create your account to get started.</p>
       {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <input type="text" name="name" placeholder="Full Name" value={form.name} onChange={handleChange}
-          className="input" required />
+          className="w-full px-4 py-2 border border-gray-300 rounded text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" required />
         <input type="email" name="email" placeholder="Email" value={form.email} onChange={handleChange}
-          className="input" required />
+          className="w-full px-4 py-2 border border-gray-300 rounded text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" required />
         <input type="password" name="password" placeholder="Password" value={form.password} onChange={handleChange}
-          className="input" required />
+          className="w-full px-4 py-2 border border-gray-300 rounded text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" required />
         <input type="password" name="confirmPassword" placeholder="Confirm Password" value={form.confirmPassword}
-          onChange={handleChange} className="input" required />
+          onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" required />
 
         <div className="text-sm text-right mb-4">
           <Link to="/login" className="text-blue-600 hover:underline">Login instead</Link>
